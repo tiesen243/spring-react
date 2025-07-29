@@ -1,0 +1,11 @@
+{
+  "name": "@yuki/api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "./gradlew build",
+    "clean": "git clean -xdf .cache .gradle bin build",
+    "dev": "./gradlew bootRun",
+    "start": "./gradlew bootRun"
+  }
+}
