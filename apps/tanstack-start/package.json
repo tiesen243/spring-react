@@ -1,0 +1,41 @@
+{
+  "name": "@yuki/tanstack-start",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun run with-env vite build",
+    "clean": "git clean -xdf .cache .nitro .output .tanstack .turbo node_modules",
+    "dev": "bun run with-env vite dev",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "start": "PORT=3002 bun run with-env node ./.output/server/index.mjs",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "prettier": "@yuki/prettier-config",
+  "dependencies": {
+    "@tanstack/react-router": "^1.130.2",
+    "@tanstack/react-start": "^1.130.3",
+    "@yuki/ui": "workspace:*",
+    "@yuki/validators": "workspace:*",
+    "react": "catalog:react",
+    "react-dom": "catalog:react"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "catalog:tailwind",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "@yuki/eslint-config": "workspace:*",
+    "@yuki/prettier-config": "workspace:*",
+    "@yuki/tsconfig": "workspace:*",
+    "dotenv-cli": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tailwindcss": "catalog:tailwind",
+    "typescript": "catalog:",
+    "vite": "^7.0.6",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
