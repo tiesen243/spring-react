@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "./gradlew build",
-    "clean": "git clean -xdf .cache .gradle bin build",
+    "clean": "git clean -xdf .cache .gradle .settings .turbo bin build .classpath .project",
     "dev": "./gradlew bootRun --continuous",
     "start": "./gradlew bootRun"
   }
