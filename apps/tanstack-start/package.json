@@ -9,7 +9,7 @@
     "dev": "bun run with-env vite dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
-    "start": "PORT=3002 bun run with-env node ./.output/server/index.mjs",
+    "start": "bun run with-env node ./.output/server/index.mjs",
     "typecheck": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --"
   },

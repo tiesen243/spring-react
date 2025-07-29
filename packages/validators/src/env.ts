@@ -14,7 +14,9 @@ export const env = createEnv({
     VERCEL_PROJECT_PRODUCTION_URL: z.optional(z.string()),
   },
 
-  client: {},
+  client: {
+    NEXT_PUBLIC_API_URL: z._default(z.string(), 'http://localhost:8080'),
+  },
 
   runtimeEnv: process.env,
 

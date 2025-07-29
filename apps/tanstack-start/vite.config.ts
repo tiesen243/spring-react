@@ -6,10 +6,10 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  process.env = { ...process.env, ...env, PORT: '3002' }
+  process.env = { ...process.env, ...env }
 
   return {
-    server: { port: 3002 },
+    server: { port: 3000 },
     define: { 'process.env': JSON.stringify(process.env) },
     plugins: [
       react(),

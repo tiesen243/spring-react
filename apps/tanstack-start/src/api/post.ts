@@ -1,6 +1,6 @@
 import { queryOptions } from '@tanstack/react-query'
 
-import { API_BASE_URL } from '@/lib/constants'
+import { env } from '@yuki/validators/env'
 
 export const postKeys = {
   all: () => ['posts'],
@@ -15,7 +15,9 @@ export const postOptions = {
     queryOptions({
       queryKey: postKeys.all(),
       queryFn: async ({ signal }) => {
-        const response = await fetch(`${API_BASE_URL}/post`, { signal })
+        const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/post`, {
+          signal,
+        })
         if (!response.ok) throw new Error('Failed to fetch posts')
         return (await response.json()) as Post[]
       },
