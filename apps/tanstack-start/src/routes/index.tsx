@@ -1,6 +1,14 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@yuki/ui/card'
+
 import { postOptions } from '@/api/post'
 
 export const Route = createFileRoute('/')({
@@ -13,5 +21,22 @@ export const Route = createFileRoute('/')({
 function HomePage() {
   const { data } = useSuspenseQuery(postOptions.all())
 
-  return <main className='container'>{JSON.stringify(data, null, 2)}</main>
+  return (
+    <main className='container'>
+      {data.map((post) => (
+        <Card key={post.id}>
+          <CardHeader>
+            <CardTitle>{post.title}</CardTitle>
+            <CardDescription>
+              {new Date(post.createdAt).toLocaleDateString('en-GB')}
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            <p>{post.content}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </main>
+  )
 }

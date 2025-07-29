@@ -21,7 +21,8 @@
     "@yuki/ui": "workspace:*",
     "@yuki/validators": "workspace:*",
     "react": "catalog:react",
-    "react-dom": "catalog:react"
+    "react-dom": "catalog:react",
+    "superjson": "^2.2.2"
   },
   "devDependencies": {
     "@tailwindcss/vite": "catalog:tailwind",
